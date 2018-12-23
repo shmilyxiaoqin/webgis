@@ -1,6 +1,6 @@
 import esriLoader from 'esri-loader'
 let widgets = function (view) {
-  console.log('----------------------')
+
   console.log(view)
   const options = {
     url: 'https://js.arcgis.com/4.7/init.js'
