@@ -2,7 +2,7 @@
   <div id="app">
     <!--背景图片-->
 <!--  <img src="./assets/logo.png">-->
-    <!--引入路由,路由设置都在此处，-->
+    <!--引入路由,-->
     <router-view/>
   </div>
 </template>
