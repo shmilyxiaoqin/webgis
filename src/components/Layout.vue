@@ -74,24 +74,20 @@ import createMap from '../map/creatMap.js'
 import widgets from '../map/widgets.js'
 
 export default {
-  data(){
-    return{
-      map:{}
+  data () {
+    return {
+      map: {}
     }
   },
   methods: {
     createMap () {
       this.map.create()
-      // this.map.getView()
-      console.log('vue------------')
-      console.log(this.map)
-      let t = setInterval(()=>{
-        console.log(this.map.view)
-        if(this.map.view){
+      let t = setInterval(() => {
+        if (this.map.view) {
           widgets(this.map.view)
           clearInterval(t)
         }
-      },200)
+      }, 200)
     }
   },
   mounted () {
