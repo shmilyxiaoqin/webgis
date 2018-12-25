@@ -65,6 +65,20 @@
 
       <el-main>
         <div id="mapView"></div>
+          <div class="tol-bar" style="display: none">
+            <div id="line-button" class="esri-widget esri-widget--button esri-interactive" title="画线">
+              <span class="esri-icon-polyline"></span>
+            </div>
+            <div id="area-button" class="esri-widget esri-widget--button esri-interactive" title="画面">
+              <span class="esri-icon-polygon"></span>
+            </div>
+            <div id="point-button" class="esri-widget esri-widget--button esri-interactive" title="画点">
+              <span class="esri-icon-radio-checked"></span>
+            </div>
+            <div id="multipoint-button" class="esri-widget esri-widget--button esri-interactive" title="画多点">
+              <span class="esri-icon-handle-horizontal"></span>
+            </div>
+          </div>
       </el-main>
     </el-container>
   </el-container>
@@ -72,6 +86,7 @@
 <script>
 import createMap from '../map/creatMap.js'
 import widgets from '../map/widgets.js'
+import editTool from '../map/editTool'
 
 export default {
   data () {
@@ -85,6 +100,7 @@ export default {
       let t = setInterval(() => {
         if (this.map.view) {
           widgets(this.map.view)
+          editTool(this.map.view)
           clearInterval(t)
         }
       }, 200)
@@ -121,5 +137,23 @@ export default {
     padding: 0;
     width: 951px;
     height: 736px;
+  }
+  .esri-widget--button{
+    font-size: 14px;
+    background-color: #fff;
+    color: #6e6e6e;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 125ms ease-in-out;
+
   }
 </style>
